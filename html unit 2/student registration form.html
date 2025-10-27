@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student registration form</title>
+</head>
+<body>
+    <h1 align="center">Student Registration Form</h1>
+    <fieldset>
+    <form action="/submit-registration" align="left" method="post">
+        <lable for="fname">
+            Full Name:
+            <input type="text" id="fname" placeholder="Enter your full name" name="fname">
+        </lable>
+        <br><br>
+        <lable for="email">
+            Email Address:
+            <input type="text" id="email" placeholder="Enter your email address" name="email">  
+        </lable>
+        <br><br>
+        <lable for="password">
+            Password:
+            <input type="password" id="password" placeholder="Enter your password" name="password">
+        </lable>
+        <br><br>
+        <lable for="Gender">
+            Gender:
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender " value="female">  
+            <label for="female">
+                Female
+            </label>
+            <input type="radio" id="other" name="gender" value="other">  
+            <label for="other">
+                Other
+            </label>
+            <br><br>
+
+            <lable for="course">
+                Course:
+                <select id="course" name="course">
+                    <option value="--select course--">--select course--</option>
+                    <option value="computer science">Computer Science</option>
+                    <option value="computer science aiml">computer science aiml</option>
+                    <option value="computer science ds">computer science ds</option>
+                    <option value="machenical">machenical</option>
+                </select>
+            </lable>
+            <br><br>
+            <lable for="contact">
+                Contact Number:
+                <input type="text" id="contact" placeholder="Enter your contact number" name="contact">
+<br><br>
+
+            </lable>
+           
+            <lable for="address">
+                Address:
+                <br>
+                <textarea id="address" name="address" rows="4" cols="30" placeholder="Enter your address"></textarea>
+            </lable>
+            
+            <br>   
+             
+            <input type="submit" value="register">
+            <input type="reset" value="clear">
+                </fieldset>
+            <p align="center">&copy; 2025 Global Daily News</p>
+            
+
+
+        
+
+
+
+    
+</body>
+</html>
