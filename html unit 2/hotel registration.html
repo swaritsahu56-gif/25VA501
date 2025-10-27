@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hotel booking form</title>
+</head>
+<body>
+    <fieldset>
+    <h1 align="center">Hotel Room Booking Form
+    </h1>
+    <form action="/submit-booking" align="center" method="post">
+        
+    <label for="fname"> 
+        Full Name :
+        <input type="text" id="fname" name ="fname">
+    </label>
+    <br><br>
+    <lable for ="email">
+        Email Address :
+        <input type ="text" id ="email" name="email">
+    </lable>
+    <br><br>
+    <lable for="Phone">
+        Phone Number :
+        <input type="text" id="phone" name="phone">
+    </lable>
+    <br><br>    
+    <lable for="Check in date">
+        Check in date:
+        <input type="datetime-local" id="checking time" name="checking time">
+    </lable>
+    <br><br>
+    <lable for="Check out time">
+        Check out time:
+        <input type="datetime-local" id="Check out time" name="check out time">
+    </lable>
+    <br><br>
+    <label for="Room type">
+        Room type:
+        <select id="room type" name="room type">
+            <option value="single">single</option>
+            <option value="double">double   </option>
+            <option value="triple">triple</option>
+        </select>
+    </label>
+    <br><br>
+    <lable for="Number of guest">
+        Number of guest:
+        <input type="text" id="Number of guest" name="Number of guest ">
+    </lable>
+    <br><br>
+    <align="center">Special Request:</align>
+    <br>
+    <textarea name="message" rows="5" cols="30"></textarea>
+    <br>
+    <input type="submit" value ="book now">
+    <input type="reset" value="reset">
+        </fieldset>
+    </form>
+
+
+    
+</body>
+</html>
