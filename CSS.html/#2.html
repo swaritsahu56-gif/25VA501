@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS selector:CSS combinators</title>
+</head>
+<body>
+    <style>
+        div > p {
+            color: white;
+            background: black;
+            width: 400px;
+        }
+        .text > p {
+            color: blue;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 500px;
+            height: 300px;
+        }
+        .jhonny > p {
+            color: green;
+            font-size: 18px;
+            font-family: 'Times New Roman', Times, serif;
+            width: 450px;
+            height: 250px;
+        }
+        a:hover {
+            color: red;
+            font-weight: bold;
+        }
+
+       
+        div p::first-letter {
+            font-size: 200%;
+            color: orange;
+            font-weight: bold;
+            
+        }
+
+        ul li:nth-child(6) {
+            background-color: rgb(82, 13, 13);
+            font-size: 16px;
+        }
+
+        div p::before {
+            content: "read more: ";
+            color: purple;
+            font-weight: bold;
+        }
+        ::marker {
+            color: brown;
+            font-size: 18px;
+        }
+        
+
+        
+    </style>
+    <div class ="text">
+        
+            <h1>CSS combinators</h1>
+            <p align="center">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Incidunt accusamus molestiae ad commodi,
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia dignissimos id, expedita eaque beatae eveniet quo sapiente recusandae corrupt
+        i accusamus quam obcaecati provident labore doloribus maxime officia assumenda? Blanditiis, accusamus.
+         labore vitae temporibus eligendi magnam suscipit optio! Dicta iure vero fugiat quia quam,
+          laborum nemo dolor similique!
+</p>
+    </div>
+
+   
+   <div> 
+    <h2> this is paragrapf 2 </h2><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, odit perferendis! 
+        Error officia rem nesciunt dicta est maiores doloribus dolor impedit placeat!
+         Reiciendis modi magni nihil reprehenderit adipisci aspernatur eaque?</p>
+         
+   </div>
+
+
+         <p><li>
+            <h2> this is paragrapf 3 </h2>
+            <a href="">
+                
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+
+            This paragraph is not styled because it is not a direct child of a div element.
+         </a>
+         </li></p>
+
+
+         
+            <div class="jhonny">
+            <h2>this is paragrapf 4</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                 This paragraph is styled with green text and specific font properties.
+                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor sed sit consectetur in labore, aliquid repellendus tempore, quia nostrum,
+                  soluta modi? Voluptate amet soluta deserunt perferendis obcaecati fugiat ullam omnis.
+            The first paragraph inside the div with class "text" is styled with blue text and specific font properties.</p>
+
+
+            </div>
+
+            <p class="sins"><ul>
+                <h2>this is paragrapf 5</h2>
+                </ul>
+                <li>
+                
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore earum voluptas maxime facere corporis blanditiis dicta fugiat totam nesciunt p
+              ossimus? Aspernatur harum sequi temporibus cum ad. Nesciunt modi obcaecati nihil.
+            </li>
+            <ul>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur facilis iure vel consequatur, aliquid error temporibus beatae delen
+              iti eaque dolor accusantium quidem porro laboriosam soluta! Quaerat a ducimus quod natus?
+              </ul>
+            </p>
+        </li>
+
+        <ul>
+        <li>Web Development
+            <ol type="1">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ol>
+        </li>
+
+</body>
+</html>
