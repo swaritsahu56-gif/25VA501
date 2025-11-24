@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    main {
+    width: 900px;
+    height: 800px;
+    background-color: rgb(172, 162, 158);
+    box-sizing: border-box;
+    padding: 20px;
+    
+}
+upper{
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+}
+.box1{
+    width:40%;
+    height: 40px;
+    background-color: lightgray;
+    border: 1px;
+}
+.box2{
+    width: 60%;
+    height: 40px;
+    background-color: lightgray;
+}
+.header.bar{
+    width: 100%;
+    height: 40px;
+    background-color: lightgray;
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+.header.bar2{
+    width: 100%;
+    height: 40px;
+    background-color: lightgray;
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+section {
+    display: flex;
+   
+    width: 100%;
+    height: 500px;
+    gap: 5px;
+}
+.left.box {
+   
+   
+    width: 30%;
+    height: 500px;
+    background-color: lightcoral;
+   
+    
+   
+}
+.right.box {
+   
+  
+    width: 35%;
+    height: 500px;
+    background-color: lightcoral;
+   
+
+}
+center{
+    flex-direction: column;
+}
+middle{
+    display: flex;
+    
+}
+.center-center.block {
+   
+    margin: 0;
+    width: 100%;
+    height: 150px;
+    background-color: lightcoral;
+    flex-direction: column;
+   
+    
+}.center-left.box {
+   
+   
+    width: 50%;
+    height: 200px;
+    background-color: rgb(51, 2, 2);
+    flex-direction: column;
+   
+    
+}
+.center-right.box {
+   
+   
+    width: 50%;
+    height: 200px;
+    background-color: rgb(18, 140, 34);
+   
+    
+}
+.module.contents {
+    width: 100%;
+    height: 150px;
+    background-color: rgb(246, 13, 234);
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.footer.box1 {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(238, 223, 16);
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+.footer.box2 {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(16, 238, 98);
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+</style>
+<body>
+    <main>
+        <upper>
+        <div class="box1">
+    </div>
+        <div class="box2"></div>
+        </upper>
+        <div class="header bar"></div>
+        <div class="header bar2"></div>
+
+
+       <section>
+            <div class="left box">
+                LEFT BOX
+            </div>
+            <center>
+            <div class="center-center block">
+                CENTER BOX
+            </div>
+            <middle>
+
+            
+                <div class="center-left box">
+                    CENTER LEFT BOX
+                </div>
+                <div class="center-right box">
+                    CENTER RIGHT BOX
+            </div>
+            </middle>
+            <div class="module contents">
+                MODULE CONTENTS
+            </div>
+            </center>
+                <div class="right box">
+                    RIGHT BOX
+                </div>
+       </section>
+       
+        <div class="footer box1">
+            FOOTER BOX1
+        </div>
+        <div class="footer box2">
+            FOOTER BOX2
+        </div>
+        
+    </main>
+</body>
+</html>
