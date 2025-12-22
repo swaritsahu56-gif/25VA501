@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon Clone with Slideshow</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+    }
+
+    /* Header */
+    header {
+      display: grid;
+      grid-template-columns: 150px 1fr 300px;
+      align-items: center;
+      background-color: #07080a;
+      color: white;
+    
+      gap: 20px;
+    }
+
+    header .logo img {
+      height: 40px;
+      cursor: pointer;
+    }
+
+    header .search-box {
+      display: grid;
+      width: auto;
+      grid-template-columns: 1fr auto;
+    }
+
+    header .search-box input {
+      padding: 8px;
+      border: none;
+      border-radius: 4px 0 0 4px;
+      outline: none;
+    }
+
+    header .search-box button {
+      padding: 8px 12px;
+      border: none;
+      background-color: #febd69;
+      cursor: pointer;
+      border-radius: 0 4px 4px 0;
+    }
+
+    header nav ul {
+      list-style: none;
+      display: grid;
+      grid-auto-flow: column;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+    }
+
+    header nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+      padding: 6px 10px;
+      transition: 0.3s;
+    }
+
+    header nav ul li a:hover {
+      color: #febd69;
+      background-color: #37475a;
+
+      border-radius: 4px;
+    }
+
+    /* Slideshow */
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      height: 300px;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: 300px;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Next & Prev buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 10px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      background-color: rgba(0,0,0,0.5);
+      border-radius: 3px;
+      user-select: none;
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    /* Product grid */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .product {
+      background: white;
+      padding: 15px;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .product img {
+      max-width: 100%;
+      height: 150px;
+      object-fit: contain;
+    }
+
+    .product h3 {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    .product p {
+      color: #007600;
+      font-weight: bold;
+    }
+
+    .product button {
+      background-color: #febd69;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #232f3e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    /* Secondary Nav Bar */
+.secondary-nav {
+  background-color: #232f3e; /* Amazon-style dark blue */
+  height: 50px;
+  width: 1000%;
+  display: flex;
+ align-items: center;
+
+}
+
+.secondary-nav ul {
+  list-style: none;
+
+
+  gap: 30px;
+ 
+
+}
+
+.secondary-nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  align-items: center;
+ 
+  transition: 0.3s;
+}
+
+.secondary-nav ul li a:hover {
+  background-color: #37475a;
+ box-shadow: #f3f3f3;
+ border-style: double;
+  color: #febd69;
+}
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <a href="https://www.amazon.in/ref=nav_logo"><img src="/25VA501/images/amazon-logo-black-backgroud.jpg" alt="Amazon Logo"></a>
+    </div>
+
+    <div class="search-box">
+      <input type="text" placeholder="Search Amazon...">
+      <button>🔍</button>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Return & <b>Order</b></a></li>
+       
+        <li><a href="#">hello, sign in
+        <br><b>Account & Lists</b>
+        </a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      </nav>
+      <!-- Second Nav Bar -->
+<nav class="secondary-nav">
+  <ul>
+    <li><a href="#">All</a></li>
+    <li><a href="#">Best Sellers</a></li>
+    <li><a href="#">Mobiles</a></li>
+    <li><a href="#">Fashion</a></li>
+    <li><a href="#">Electronics</a></li>
+    <li><a href="#">Prime</a></li>
+    <li><a href="#">Amazon Pay</a></li>
+    <li><a href="#">Customer Service</a></li>
+  </ul>
+</nav>
+   
+
+    
+    
+  </header>
+
+  <!-- Slideshow -->
+  <div class="slideshow-container">
+    <div class="slide"><img src="/25VA501/images/Screenshot 2025-12-19 222242.png" alt="Slide 1"></div>
+    <div class="slide"><img src="/25VA501/images/Screenshot 2 2025-12-19 222425.png" alt="Slide 2"></div>
+    <div class="slide"><img src="/25VA501/images/Screenshot 3 2025-12-19 222516.png" alt="Slide 3"></div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+  </div>
+
+  <!-- Product Grid -->
+  <section class="products">
+    <!-- #1 -->
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/71r2ySSfgBL._SY450_.jpg" alt="Product 1">
+      <h3>HP Victus, AMD Ryzen 7 7445HS, 6GB RTX 4050, 16GB</h3>
+      <p>₹79,900</p>
+      <button>Add to Cart</button>
+ 
+        <button>Buy Now</button>
+    </div>
+    <!-- #2 -->
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/41QwSzPBJOL._SY300_SX300_QL70_FMwebp_.jpg" alt="Product 2">
+      <h3>boAt Nirvana Zenith Pro (2025), 50dB Hybrid Adaptive ANC, Spatial Audio</h3>
+      <p>₹2,999</p>
+      <button>Add to Cart</button>
+    
+      <button>Buy Now</button>
+    </div>
+    <!-- #3 -->
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/61mpMH5TzkL._AC_UY327_FMwebp_QL65_.jpg" alt="Product 3">
+        <h3>Logitech G502 Hero High Performance Wired USB Gaming Mouse</h3>
+      <p>₹1,299</p>
+      <button>Add to Cart</button>
+   
+      <button>Buy Now</button>
+    </div>
+    <!-- #4 -->
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/51EWytLLqAL._SY450_.jpg" alt="Product 4">
+      <h3>MSI Crosshair A16, AMD 8th Gen. Ryzen 9 8940HX, 41cm QHD+ 240Hz Gaming Laptop (16GB/1TB NVMe SSD/Windows 11 Home/NVIDIA GeForce RTX 5060)</h3>
+      <p>₹3,499</p>
+      <button>Add to Cart</button>
+
+        <button>Buy Now</button>
+    </div>
+        <!-- #5 -->
+      <div class="product">
+      <img src="https://m.media-amazon.com/images/I/41YNE+k+oEL._SY300_SX300_QL70_FMwebp_.jpg" alt="Product 1">
+      <h3>Wembley Rock Crawler Monster Truck| Remote Control Car Toy for Boys|</h3>
+      <p>₹2,499</p>
+      <button>Add to Cart</button>
+      <button>Buy Now</button>
+    </div>
+
+<!-- #6 -->
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/51Kk6rjcOXL._SX425_.jpg" alt="Product 2">
+      <h3>Y39 5G (Lotus Purple, 8GB RAM, 128GB Storage)</h3>
+      <p>₹15,999</p>
+      <button>Add to Cart</button>
+        <button>Buy Now</button>
+        </div>
+            <!-- #7 -->
+
+         <div class="product">
+      <img src="https://m.media-amazon.com/images/I/6149-ZNfTKL._SY535_.jpg" alt="Product 2">
+      <h3>NIKE 
+Downshifter 13 Running Shoes</h3>
+      <p>₹4,295</p>
+      <button>Add to Cart</button>
+        <button>Buy Now</button>
+        </div>
+            <!-- #8 -->
+
+         <div class="product">
+      <img src="https://m.media-amazon.com/images/I/71rs4Aer71L._SX425_.jpg" alt="Product 2">
+      <h3>Samsung Galaxy S25 Ultra 5G AI Smartphone </h3>
+      <p>₹150,999</p>
+      <button>Add to Cart</button>
+     
+        <button>Buy Now</button>
+
+    </div>
+        <!-- #9 -->
+    
+            <div class="product">
+        <img src="https://m.media-amazon.com/images/I/51bbLkXsL1L._SX679_.jpg" alt="Product 2">
+        <h3>Tommy Hilfiger Multifunction Navy Dial Stainless Steel Strap Watch for Men</h3>
+        <p>₹10,999</p>
+        <button>Add to Cart</button>
+        
+            <button>Buy Now</button>
+        </div>
+            <!-- #10 -->
+     <div class="product">
+      <img src="https://m.media-amazon.com/images/I/31RnuvCDlhL._SX300_SY300_QL70_FMwebp_.jpg" alt="Product 2">
+      <h3>Marshall Kilburn II 36W Portable Bluetooth Speaker - Black & Brass</h3>
+      <p>₹21,999</p>
+      <button>Add to Cart</button>
+     
+    <button>Buy Now</button>
+    </div>
+    <!-- #11 -->
+    <div class="product">
+    <img src="https://img.autocarindia.com/mmv_images/colors/20250620010815_Maruti_Suzuki_Fronx_Opulent_Red[1].jpg?w=640&q=75" alt="Product 2">
+    <h3>
+NEXA-FRONX</h3>
+    <p>₹1,10,999</p>
+    <button>Add to Cart</button>
+     
+    <button>Buy Now</button>
+    </div>
+    <!-- #12 -->
+    <div class="product">
+    <img src="https://m.media-amazon.com/images/I/61nv5TqjBoL._SX466_.jpg" alt="Product 2">
+    <h3>Voltas Vectra Elite 2 ton 3 star inverter Split AC | 4-IN-1 Adjustable mode </h3>
+    <p>₹15,999</p>
+    <button>Add to Cart</button> 
+    <button>Buy Now</button>
+    </div>
+    <!-- #13 -->
+
+    <div class="product">
+    <img src="https://m.media-amazon.com/images/I/61RYwHoeHjL._AC_UY327_FMwebp_QL65_.jpg" alt="Product 3">
+    <h3>Logitech G102 USB Light Sync Gaming Mouse with Customizable RGB Lighting</h3>
+    <p>₹1,299</p>
+    <button>Add to Cart</button>   
+    <button>Buy Now</button>
+    </div>
+    <!-- #14 -->
+
+    <div class="product">
+    <img src="https://via.placeholder.com/150" alt="Product 4">
+    <h3>Bluetooth Speaker</h3>
+    <p>₹3,499</p>
+    <button>Add to Cart</button>  
+    <button>Buy Now</button>
+    </div> 
+    <!-- #15 -->
+    <div class="product">
+    <img src="/25VA501/images/Screenshot 2025-12-19 222242.png" alt="Product 1">
+    <h3>Wireless Headphones</h3>
+    <p>₹2,499</p>
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+    </div>
+    <!-- #16 -->
+    <div class="product">
+    <img src="https://m.media-amazon.com/images/I/61RYwHoeHjL._AC_UY327_FMwebp_QL65_.jpg" alt="Product 3">
+    <h3>Gaming Mouse</h3>
+    <p>₹1,299</p>
+    <button>Add to Cart</button>   
+    <button>Buy Now</button>
+    </div>
+    <!-- #17 -->
+    <div class="product">
+    <img src="https://m.media-amazon.com/images/I/31S74o1sCSS._SX300_SY300_QL70_FMwebp_.jpg" alt="Product 4">
+    <h3>Havells Aqua Plus Electric Kettle 1.2 Litre, 1250 Watt </h3>
+    <p>₹1,499</p>
+    <button>Add to Cart</button>  
+    <button>Buy Now</button>
+    </div> 
+    <!-- #18 -->
+    <div class="product">
+    <img src="https://m.media-amazon.com/images/I/71TtTKwu0PL._SY606_.jpg" alt="Product 1">
+    <h3>Wireless Headphones</h3>
+    <p>₹2,499</p>
+    <button>Add to Cart</button> 
+    <button>Buy Now</button>
+    </div>
+    <!-- #19 -->
+
+    <div class="product">
+    <img src="https://m.media-amazon.com/images/I/71TtTKwu0PL._SY741_.jpg" alt="Product 3">
+    <h3>Tommy Hilfiger Men Black Dial Quartz Multifunction Watch</h3>
+    <p>₹14,299</p>
+    <button>Add to Cart</button>   
+    <button>Buy Now</button>
+    </div>
+    <!-- #20 -->
+
+    <div class="product">
+    <img src="https://m.media-amazon.com/images/I/61Cblx5LWAL._SX466_.jpg" alt="Product 4">
+    <h3>Samsung 653 L, 3 Star, Frost Free, Double Door, Convertible 5-in-1</h3>
+    <p>₹79,499</p>
+    <button>Add to Cart</button> 
+    <button>Buy Now</button>
+    </div>
+    <!-- #21 -->
+
+    <div class="product">
+    <img src="https://m.media-amazon.com/images/I/31K5oAhDs3L._SY300_SX300_QL70_FMwebp_.jpg" alt="Product 1">
+    <h3>realme neckband</h3>
+    <p>₹2,499</p>
+    <button>Add to Cart</button>
+     
+    <button>Buy Now</button>
+    </div>
+    <!-- #22 -->
+
+    <div class="product">
+    <img src="https://via.placeholder.com/150" alt="Product 2">
+    <h3>Smartphone</h3>
+    <p>₹15,999</p>
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+    </div>
+    <!-- #23 -->
+
+    <div class="product">
+    <img src="https://via.placeholder.com/150" alt="Product 3">
+    <h3>Gaming Mouse</h3>
+    <p>₹1,299</p>
+    <button>Add to Cart</button>    
+    <button>Buy Now</button>
+    </div>
+    <!-- #24 -->
+
+    <div class="product">
+    <img src="https://via.placeholder.com/150" alt="Product 4">
+    <h3>Bluetooth Speaker</h3>
+    <p>₹3,499</p>
+    <button>Add to Cart</button>   
+    <button>Buy Now</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Amazon Clone | Built by Swarit</p>
+  </footer>
+
+  <!-- JavaScript for Slideshow -->
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("slide");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      slides[slideIndex-1].style.display = "block";
+      setTimeout(showSlides, 3000); // Change slide every 3 seconds
+    }
+
+    function plusSlides(n) {
+      slideIndex += n - 1;
+      showSlides();
+    }
+  </script>
+
+</body>
+</html>
